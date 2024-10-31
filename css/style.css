@@ -392,62 +392,6 @@ input:focus{
 .single-product .col-2 h1{
     margin-left: 0px;
 }
-/*Cart Items*/
-.cart-page{
-    margin: 80px auto;
-}
-table{
-    width: 100%;/*takes full width of the web page*/
-    border-collapse: collapse;
-}
-.cart-info{
-    display: flex;
-    flex-wrap: wrap;
-}
-th{
-    text-align: left;
-    padding: 5px;
-    color: white;
-    background: #ff523b;
-    font-weight: normal;
-}
-td{
-    padding: 10px 5px;
-}
-td input{
-    width: 40px;
-    height: 30px;
-    padding: 5px;
-}
-td a{
-    color: #ff523b;
-    ffont-size: 12px;
-}
-td img{
-    width: 80px;
-    height: 80px;
-    margin-right: 10px;
-}
-td small{
-    padding-left: 0px;
-    margin-left: 0px;
-}
-
-.total-price{
-    display: flex;
-    justify-content: flex-end;/*put content with max width at the end, if flex start, then put content at start with max width as we mentioned max width below*/
-}
-.total-price table{
-    border-top: 3px solid #ff523b;
-    width: 100%;
-    max-width: 480px;
-}
-td:last-child{
-    text-align: right;/*align all last column values to right, in our case, these are prices*/
-}
-th:last-child{
-    text-align: right;
-}
 /*account page*/
 .account-page{
     padding: 50px 0;
@@ -587,11 +531,34 @@ form a{
 
 
 
+.imageContainer{
+    display: inline-block;
+    position: relative;
+}
+.add-to-cart-button{
+    position: absolute;
+    top: 50%;
+    left: 29%;
+    width: 10em;
+    height: 2.5em;
+    border: none;
+    border-radius: 4px;
+    background-color: #000;
+    color: white;
+    display: none;
+    cursor: pointer;
+}
 
+.imageContainer:hover a + .add-to-cart-button{
+    display: block;
+}
+.imageContainer:hover img{
+    opacity: 0.5;
+}
 
-
-
-
+.imageContainer:hover .add-to-cart-button + img{
+    opacity: 0.5;
+}
 
 
 /*----------media query for each and every item display on mobile or screen size less than 600px---------------*/
@@ -616,8 +583,5 @@ form a{
         line-height: 26px;
     }
     /*for cart page*/
-    .cart-info p{
-        display:none;/*hide product name in smaller screen*/
-    }
-
+    
 }
