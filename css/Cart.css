@@ -103,7 +103,8 @@ td input {
 }
 td a {
   color: #ff523b;
-  ffont-size: 12px;
+  font-size: 16px;
+  cursor: pointer;
 }
 td img {
   width: 80px;

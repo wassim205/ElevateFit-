@@ -200,6 +200,7 @@
                             <div class="cartProductStyleP">
                                 <p>${name}</p>
                                 <p>$${price.toFixed(2)}</p>
+                                <a class="remove-button" data-key="${baseKey}">Remove</a>
                             </div>
                         </div>
                     </td>
@@ -258,6 +259,22 @@
                     // Update total price in local storage
                     localStorage.setItem('total_price', `$${totalSubtotal.toFixed(2)}`);
                     updateCartHeaderTotalPrice();
+                });
+            });
+
+            //remove function
+            document.querySelectorAll('.remove-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const key = e.target.dataset.key;
+
+                    // Remove the item from local storage
+                    localStorage.removeItem(`${key}_name`);
+                    localStorage.removeItem(`${key}_image`);
+                    localStorage.removeItem(`${key}_price`);
+                    localStorage.removeItem(`${key}_quantity`);
+
+                    // Reload cart items to reflect changes
+                    loadCartItem();
                 });
             });
         }
