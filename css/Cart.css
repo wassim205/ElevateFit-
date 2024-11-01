@@ -208,6 +208,19 @@ th:last-child {
   }
 }
 
+
+
+.cartProductStyle{
+  display: flex;
+  flex-direction: row;
+}
+.cartProductStyleP{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
 @media only screen and (max-width: 600px) {
   .cart-info p {
     display: none; /*hide product name in smaller screen*/

@@ -532,13 +532,16 @@ form a{
 
 
 .imageContainer{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
+    transition: ;
+
 }
+
 .add-to-cart-button{
     position: absolute;
-    top: 50%;
-    left: 29%;
     width: 10em;
     height: 2.5em;
     border: none;
@@ -547,6 +550,7 @@ form a{
     color: white;
     display: none;
     cursor: pointer;
+    
 }
 
 .imageContainer:hover a + .add-to-cart-button{
@@ -558,6 +562,17 @@ form a{
 
 .imageContainer:hover .add-to-cart-button + img{
     opacity: 0.5;
+    
+}
+
+.add-to-cart-button:hover{
+    width: 12em;
+    height: 2.5em;
+    font-weight: bold;
+}
+.add-to-cart-button:active{
+    color: red;
+    font-weight: bold;
 }
 
 

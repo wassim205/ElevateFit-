@@ -1,31 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="test.css">
+    <title>elevateFit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!---- icon cdn link---->
+
+
 </head>
+
 <body>
-    
 
-    <div class="product">
-        <img src="images/product-1.jpg" alt="Product Image" class="product-image" />
-        <button class="add-to-cart">Add to Cart</button>
-      </div>
-      
 
-      <script>const product = document.querySelector('.product');
-        const addToCartButton = document.querySelector('.add-to-cart');
-        
-        // Show button on hover
-        product.addEventListener('mouseenter', () => {
-          addToCartButton.style.opacity = '1';
+    <!--making header-->
+    <header>
+
+        <nav id="nav">
+
+            <img src="images/logo-white.png" class="logo">
+
+            <ul class="menu-bar-side">
+                <li><a href="index.html" style=" all: unset;">Home</a></li>
+                <li><a href="Products.html" style=" all: unset;">Shope</a></li>
+                <li><a href="#" style=" all: unset;">about</a></li>
+                <li><a href="#" style=" all: unset;">contact us</a></li>
+            </ul>
+
+            <ul class="menu-bar">
+
+                <li id="header-total-price">&#36;0.00</li>
+                <li><a href="testcart.html"><i class='fas fa-shopping-cart'></i></a></li>
+
+            </ul>
+
+            <i class="fa fa-bars"></i>
+        </nav>
+
+    </header>
+
+
+    <!--Featured Products-->
+
+
+    <div class="small container">
+
+
+        <div class="row row-2">
+            <h2>All Products
+
+            </h2>
+
+
+
+            <div class="ml-50">
+                <input type="checkbox" id="priceFilterToggle" />
+                <label for="priceFilterToggle" class="text-blue bold">Filter by Price</label>
+            </div>
+
+            <div id="priceRangeContainer" style="display: none;">
+                <input type="range" id="priceRange" min="10" max="150" step="5" value="150" />
+                <span id="priceValue">150</span>
+            </div>
+
+            <select id="categorySelect">
+                <option value="all">All</option>
+                <option value="T-shirt">T-shirts</option>
+                <option value="pants">Pants</option>
+                <option value="shoes">Shoes</option>
+                <option value="watch">Watch</option>
+                <option value="socks">Socks</option>
+            </select>
+        </div>
+
+
+        <div class="row">
+
+
+            <div class="col-4" data-category="T-shirt" data-price="50">
+
+                <div class="imageContainer"><a href="product-detail.html">
+                        <img src="Images/product-1.jpg" class="product-image"></a>
+                    <button class="add-to-cart-button">add to cart</button>
+                </div>
+                <h4 class="product-name">Red Printed T-shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p class="product-price">$50.00</p>
+
+            </div>
+
+            <div class="col-4" data-category="shoes" data-price="30">
+                <div class="imageContainer"><a href="product-detail.html">
+                        <img src="Images/product-2.jpg" class="product-image"></a>
+                    <button class="add-to-cart-button">add to cart</button>
+                </div>
+                <h4 class="product-name">Black Shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p class="product-price">$30.00</p>
+            </div>
+
+            <div class="col-4" data-category="pants" data-price="80">
+                <div class="imageContainer"><a href="product-detail.html">
+                        <img src="Images/product-3.jpg" class="product-image"></a>
+                    <button class="add-to-cart-button">add to cart</button>
+                </div>
+                <h4 class="product-name">Red Printed T-shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p class="product-price">$80.00</p>
+            </div>
+
+            <div class="col-4" data-category="T-shirt" data-price="20">
+                <div class="imageContainer"><a href="product-detail.html">
+                        <img src="Images/product-4.jpg" class="product-image"></a>
+                    <button class="add-to-cart-button">add to cart</button>
+                </div>
+                <h4 class="product-name">Red Printed T-shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+
+                </div>
+                <p class="product-price">$20.00</p>
+            </div>
+
+
+
+
+
+
+            <div class="col-4" data-category="shoes" data-price="50">
+                <div class="imageContainer"><a href="product-detail.html">
+                        <img src="Images/product-5.jpg" class="product-image"></a>
+                    <button class="add-to-cart-button">add to cart</button>
+                </div>
+                <h4 class="product-name">gray shoes</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p class="product-price">$50.00</p>
+            </div>
+
+            <div class="col-4" data-category="T-shirt" data-price="74">
+                <div class="imageContainer"><a href="product-detail.html">
+                        <img src="Images/product-6.jpg" class="product-image"></a>
+                    <button class="add-to-cart-button">add to cart</button>
+                </div>
+                <h4 class="product-name">Red Printed T-shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p class="product-price">$74.00</p>
+            </div>
+
+            <div class="col-4" data-category="socks" data-price="10">
+                <div class="imageContainer"><a href="product-detail.html">
+                        <img src="Images/product-7.jpg" class="product-image"></a>
+                    <button class="add-to-cart-button">add to cart</button>
+                </div>
+                <h4 class="product-name">Red Printed T-shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p class="product-price">$10.00</p>
+            </div>
+
+            <div class="col-4" data-category="watch" data-price="150">
+                <div class="imageContainer"><a href="product-detail.html">
+                        <img src="Images/product-8.jpg" class="product-image"></a>
+                    <button class="add-to-cart-button">add to cart</button>
+                </div>
+                <h4 class="product-name">Red Printed T-shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+
+                </div>
+                <p class="product-price">$150.00</p>
+            </div>
+
+            <div class="col-4" data-category="watch" data-price="120">
+                <div class="imageContainer"><a href="product-detail.html">
+                        <img src="Images/product-9.jpg" class="product-image"></a>
+                    <button class="add-to-cart-button">add to cart</button>
+                </div>
+                <h4 class="product-name">Red Printed T-shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p class="product-price">$120.00</p>
+            </div>
+
+            <div class="col-4" data-category="shoes" data-price="40">
+                <div class="imageContainer"><a href="product-detail.html">
+                        <img src="Images/product-10.jpg" class="product-image"></a>
+                    <button class="add-to-cart-button">add to cart</button>
+                </div>
+                <h4 class="product-name">Red Printed T-shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p class="product-price">$40.00</p>
+            </div>
+
+            <div class="col-4" data-category="shoes" data-price="35">
+                <div class="imageContainer"><a href="product-detail.html">
+                        <img src="Images/product-11.jpg" class="product-image"></a>
+                    <button class="add-to-cart-button">add to cart</button>
+                </div>
+                <h4 class="product-name">Red Printed T-shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                </div>
+                <p class="product-price">$35.00</p>
+            </div>
+
+            <div class="col-4" data-category="pants" data-price="25">
+                <div class="imageContainer"><a href="product-detail.html">
+                        <img src="Images/product-12.jpg" class="product-image"></a>
+                    <button class="add-to-cart-button">add to cart</button>
+                </div>
+                <h4 class="product-name">Red Printed T-shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+
+                </div>
+                <p class="product-price">$25.00</p>
+            </div>
+        </div>
+
+        `
+        <div class="page-btn">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>&#8594;</span>
+
+        </div>
+    </div>
+
+    <!-------footer------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and Ios mobile phone.</p>
+
+
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>
+
+                </div>
+
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png">
+                    <p>Our purpose is To Sustainably Make the Pleasure and
+                        Benefits of Sports
+                        Accessible
+                        to the
+                        Many.
+                    </p>
+                </div>
+
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+
+                </div>
+            </div>
+            <!--add horizontal line and copyright text along with clickable link-->
+            <hr>
+            <a href="" class="copyright">Copyright 2024 - Made with ❤️
+                LorenzCipher</a>
+        </div>
+    </div>
+
+    <!-----------------JS----------------------->
+
+    <script>
+
+
+        // Select elements
+        const priceFilterToggle = document.getElementById('priceFilterToggle');
+        const priceRangeContainer = document.getElementById('priceRangeContainer');
+        const priceRange = document.getElementById('priceRange');
+        const priceValue = document.getElementById('priceValue');
+        const categorySelect = document.getElementById("categorySelect");
+        const products = document.querySelectorAll(".col-4");
+
+        // Function to filter products based on category and price
+        function filterProducts() {
+            const selectedCategory = categorySelect.value;
+            const maxPrice = priceFilterToggle.checked ? +priceRange.value : Infinity;
+
+            products.forEach(product => {
+                const category = product.dataset.category;
+                const productPrice = +product.dataset.price;
+
+                const isCategoryMatch = selectedCategory === "all" || category === selectedCategory;
+                const isPriceMatch = productPrice <= maxPrice;
+
+                product.style.display = (isCategoryMatch && isPriceMatch) ? "block" : "none";
+            });
+        }
+
+        // Event listeners for category, price filter toggle, and price range input
+        categorySelect.addEventListener("change", () => {
+            priceFilterToggle.checked = false;
+            priceRangeContainer.style.display = 'none';
+            filterProducts();
         });
-        
-        // Hide button when not hovering
-        product.addEventListener('mouseleave', () => {
-          addToCartButton.style.opacity = '0';
-        });</script>
+
+        priceFilterToggle.addEventListener('change', () => {
+            priceRangeContainer.style.display = priceFilterToggle.checked ? 'flex' : 'none';
+            filterProducts();
+        });
+
+        priceRange.addEventListener('input', () => {
+            priceValue.textContent = priceRange.value;
+            filterProducts();
+        });
+
+
+
+
+        // Function to update the total price in the header
+        function updateHeaderTotalPrice() {
+            const headerTotalPriceElement = document.getElementById('header-total-price');
+            let totalPrice = 0;
+
+            // Iterate through local storage to calculate total price
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.endsWith('_price')) {
+                    const price = parseFloat(localStorage.getItem(key));
+                    const quantity = parseInt(localStorage.getItem(key.replace('_price', '_quantity')));
+                    if (!isNaN(price) && !isNaN(quantity)) {
+                        totalPrice += price * quantity;
+                    }
+                }
+            }
+
+            headerTotalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+        }
+
+        // Add event listener to all "Add to Cart" buttons
+        document.querySelectorAll('.add-to-cart-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const productContainer = this.closest('.col-4');
+                const productImage = productContainer.querySelector('.product-image').src;
+                const productName = productContainer.querySelector('.product-name').innerText;
+                const productPrice = parseFloat(productContainer.querySelector('.product-price').innerText.replace('$', ''));
+
+                // Create a unique key for each product based on its name and price
+                const baseKey = `cart_${productName}_${productPrice}`;
+
+                // Retrieve existing quantity, if any, and increase it
+                const existingQuantity = localStorage.getItem(`${baseKey}_quantity`);
+                const quantity = existingQuantity ? parseInt(existingQuantity) + 1 : 1;
+
+                // Store each attribute separately
+                localStorage.setItem(`${baseKey}_image`, productImage);
+                localStorage.setItem(`${baseKey}_name`, productName);
+                localStorage.setItem(`${baseKey}_price`, productPrice);
+                localStorage.setItem(`${baseKey}_quantity`, quantity);
+
+                // Update total price in the header
+                updateHeaderTotalPrice();
+            });
+        });
+
+        // Call the function to set the initial total price in the header
+        updateHeaderTotalPrice();
+
+    </script>
+
+
+
+
 </body>
+
 </html>
