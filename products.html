@@ -359,74 +359,8 @@
     </div>
 
     <!-----------------JS----------------------->
-
+    <script src="js/headerCounter.js"></script>
     <script>
-
-
-        // Select elements
-        const priceFilterToggle = document.getElementById('priceFilterToggle');
-        const priceRangeContainer = document.getElementById('priceRangeContainer');
-        const priceRange = document.getElementById('priceRange');
-        const priceValue = document.getElementById('priceValue');
-        const categorySelect = document.getElementById("categorySelect");
-        const products = document.querySelectorAll(".col-4");
-
-        // Function to filter products based on category and price
-        function filterProducts() {
-            const selectedCategory = categorySelect.value;
-            const maxPrice = priceFilterToggle.checked ? +priceRange.value : Infinity;
-
-            products.forEach(product => {
-                const category = product.dataset.category;
-                const productPrice = +product.dataset.price;
-
-                const isCategoryMatch = selectedCategory === "all" || category === selectedCategory;
-                const isPriceMatch = productPrice <= maxPrice;
-
-                product.style.display = (isCategoryMatch && isPriceMatch) ? "block" : "none";
-            });
-        }
-
-        // Event listeners for category, price filter toggle, and price range input
-        categorySelect.addEventListener("change", () => {
-            priceFilterToggle.checked = false;
-            priceRangeContainer.style.display = 'none';
-            filterProducts();
-        });
-
-        priceFilterToggle.addEventListener('change', () => {
-            priceRangeContainer.style.display = priceFilterToggle.checked ? 'flex' : 'none';
-            filterProducts();
-        });
-
-        priceRange.addEventListener('input', () => {
-            priceValue.textContent = priceRange.value;
-            filterProducts();
-        });
-
-
-
-
-        // Function to update the total price in the header
-        function updateHeaderTotalPrice() {
-            const headerTotalPriceElement = document.getElementById('header-total-price');
-            let totalPrice = 0;
-
-            // Iterate through local storage to calculate total price
-            for (let i = 0; i < localStorage.length; i++) {
-                const key = localStorage.key(i);
-                if (key.endsWith('_price')) {
-                    const price = parseFloat(localStorage.getItem(key));
-                    const quantity = parseInt(localStorage.getItem(key.replace('_price', '_quantity')));
-                    if (!isNaN(price) && !isNaN(quantity)) {
-                        totalPrice += price * quantity;
-                    }
-                }
-            }
-
-            headerTotalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
-        }
-
         // Add event listener to all "Add to Cart" buttons
         document.querySelectorAll('.add-to-cart-button').forEach(button => {
             button.addEventListener('click', function () {
@@ -452,15 +386,8 @@
                 updateHeaderTotalPrice();
             });
         });
-
-        // Call the function to set the initial total price in the header
         updateHeaderTotalPrice();
-
     </script>
-
-
-
-
 </body>
 
 </html>

@@ -39,8 +39,8 @@
 
             <ul class="menu-bar">
 
-                <li>&#36;0.00</li>
-                <li><i class='fas fa-shopping-cart'></i></li>
+                <li id="header-total-price">&#36;0.00</li>
+                <li><a href="Cart.html"><i class='fas fa-shopping-cart'></i></a></li>
 
             </ul>
 
@@ -91,10 +91,16 @@
             <div class="col-2">
                 <p>Home/ Pants</p>
                 <h1>Black Pants</h1>
-                <h4>$25.00</h4>
-
+                <h4 class="product-price" id="product-price">$25.00</h4>
+                <div class="rating">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                </div>
                 <!--sizes selection-->
-                <select>
+                <select id="sizeSelect">
                     <option>Select Size</option>
                     <option>XXL</option>
                     <option>XL</option>
@@ -104,8 +110,8 @@
                 </select>
 
                 <!--no of products-->
-                <input type="number" value="1" min="1">
-                <a href="" class="btn">Add To Cart</a><!--add to cart button-->
+                <input type="number" id="quantityInput" value="1" min="1">
+                <a href="#" class="btn ad-to-cart-button">Add To Cart</a><!--add to cart button-->
                 <h3>Product Details <i class="fa fa-indent" aria-hidden="true"></i></h3>
                 <br>
                 <p>Give Your summer wardrobe a style upgrade with the HTX Men's
@@ -246,7 +252,11 @@
 
 
     <script src="js/script.js"></script>
-
+    <script src="js/addToLocalStorage.js"></script>
+    <script src="js/headerCounter.js">
+    </script>
+    <script> updateHeaderTotalPrice();
+    </script>
 </body>
 
 </html>

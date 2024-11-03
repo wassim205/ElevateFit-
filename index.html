@@ -45,8 +45,8 @@
 
             <ul class="menu-bar">
 
-                <li>&#36;0.00</li>
-                <li><i class='fas fa-shopping-cart'></i></li>
+                <li id="header-total-price">&#36;0.00</li>
+                <li><a href="Cart.html"><i class='fas fa-shopping-cart'></i></a></li>
 
             </ul>
 
@@ -64,9 +64,9 @@
                 25% Off On All Products
             </h4>
 
-            <button class="shopNow">
+            <a href="products.html"><button class="shopNow">
                 shop now
-            </button>
+            </button></a>
             <button class="findMore">
                 find more
             </button>
@@ -461,8 +461,10 @@
     </div>
 
     <!-----------------JS----------------------->
-
-
+    <script src="js/headerCounter.js">
+    </script>
+    <script> updateHeaderTotalPrice();
+    </script>
 </body>
 
 </html>
