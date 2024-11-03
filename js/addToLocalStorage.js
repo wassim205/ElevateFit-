@@ -1,10 +1,30 @@
+// Function to update the total price in the header
+function updateHeaderTotalPrice() {
+  const headerTotalPriceElement = document.getElementById("header-total-price");
+  let totalPrice = 0;
+
+  // Iterate through local storage to calculate total price
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key.endsWith("_price")) {
+      const price = parseFloat(localStorage.getItem(key));
+      const quantity = parseInt(
+        localStorage.getItem(key.replace("_price", "_quantity"))
+      );
+      if (!isNaN(price) && !isNaN(quantity)) {
+        totalPrice += price * quantity;
+      }
+    }
+  }
+
+  headerTotalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+}
 // Add event listener to the "Add to Cart" button
 document
   .querySelector(".ad-to-cart-button")
   .addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent the default anchor behavior
+    event.preventDefault();
 
-    // Get product details
     const productImage = document.getElementById("product-img").src;
     const productName = document.querySelector("h1").innerText;
     const productPrice = parseFloat(

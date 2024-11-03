@@ -32,26 +32,30 @@
     <!--making header-->
     <header>
 
-        <nav id="nav">
+        <header>
 
-            <img src="images/logo-white.png" class="logo">
+            <nav id="nav">
 
-            <ul class="menu-bar-side">
-                <li><a href="index.html" style=" all: unset;">Home</a></li>
-                <li><a href="products.html" style=" all: unset;">Shope</a></li>
-                <li><a href="#" style=" all: unset;">about</a></li>
-                <li><a href="#" style=" all: unset;">contact us</a></li>
-            </ul>
+                <img src="images/logo-white.png" class="logo">
 
-            <ul class="menu-bar">
+                <ul class="menu-bar-side" id="mobile-menu">
+                    <li><a href="index.html" style=" all: unset;">Home</a></li>
+                    <li><a href="products.html" style=" all: unset;">Shope</a></li>
+                    <li><a href="#" style=" all: unset;">about</a></li>
+                    <li><a href="#" style=" all: unset;">contact us</a></li>
+                </ul>
 
-                <li id="header-total-price">&#36;0.00</li>
-                <li><a href="Cart.html"><i class='fas fa-shopping-cart'></i></a></li>
+                <ul class="menu-bar">
 
-            </ul>
+                    <li id="header-total-price" class="TOTAL">&#36;0.00</li>
+                    <li><a href="Cart.html"><i class='fas fa-shopping-cart' id="cartLogo"></i></a></li>
 
-            <i class="fa fa-bars"></i>
-        </nav>
+                </ul>
+
+                <i class="fa fa-bars" id="burger-menu"></i>
+            </nav>
+
+        </header>
 
 
         <div class="content">
@@ -65,8 +69,8 @@
             </h4>
 
             <a href="products.html"><button class="shopNow">
-                shop now
-            </button></a>
+                    shop now
+                </button></a>
             <button class="findMore">
                 find more
             </button>
@@ -465,6 +469,7 @@
     </script>
     <script> updateHeaderTotalPrice();
     </script>
+    <script src="js/navbar.js"></script>
 </body>
 
 </html>

@@ -129,9 +129,13 @@
       top:92px;
       Width:200px;
       height:0px;
-      overflow:hidden;
       text-align:center;
       transition:all .5s;
+    }
+
+    .TOTAL.active, #cartLogo.fas.fa-shopping-cart.active {
+      position: relative;
+      top: -5.8em;
     }
     
     

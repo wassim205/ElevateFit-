@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>elevateFit</title>
+    <title>ElevateFit - Vêtements de Sport et Mode Active</title>
+    
+    <meta name="description" content="Découvrez ElevateFit, la boutique en ligne de vêtements de sport réactive et interactive. Filtrez nos produits par catégorie et prix, ajoutez vos favoris à la wishlist, et profitez d'une expérience de paiement fluide et sécurisée.">
+    
+    <meta name="keywords" content="ElevateFit, vêtements de sport, mode active, boutique en ligne, filtre par catégorie, filtre par prix, ajouter au panier, page produit, page panier, paiement sécurisé, wishlist, connexion, inscription">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/detail.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
@@ -28,9 +32,9 @@
 
         <nav id="nav">
 
-            <img src="images/logo-white.png" class="logo">
+            <img src="images/logo-white.png" class="logo" alt="logo">
 
-            <ul class="menu-bar-side">
+            <ul class="menu-bar-side" id="mobile-menu">
                 <li><a href="index.html" style=" all: unset;">Home</a></li>
                 <li><a href="products.html" style=" all: unset;">Shope</a></li>
                 <li><a href="#" style=" all: unset;">about</a></li>
@@ -39,12 +43,12 @@
 
             <ul class="menu-bar">
 
-                <li id="header-total-price">&#36;0.00</li>
-                <li><a href="Cart.html"><i class='fas fa-shopping-cart'></i></a></li>
+                <li id="header-total-price" class="TOTAL">&#36;0.00</li>
+                <li><a href="Cart.html"><i class='fas fa-shopping-cart' id="cartLogo"></i></a></li>
 
             </ul>
 
-            <i class="fa fa-bars"></i>
+            <i class="fa fa-bars" id="burger-menu"></i>
         </nav>
 
     </header>
@@ -90,7 +94,7 @@
             <div class="col-4" data-category="T-shirt" data-price="50">
 
                 <div class="imageContainer"><a href="ProductDetails/product-detail1.html">
-                        <img src="images/product-1.jpg" class="product-image"></a>
+                        <img src="images/product-1.jpg" class="product-image" alt="red-shirt"></a>
                     <button class="add-to-cart-button">add to cart</button>
                 </div>
                 <h4 class="product-name">Red Printed T-shirt</h4>
@@ -107,7 +111,7 @@
 
             <div class="col-4" data-category="shoes" data-price="30">
                 <div class="imageContainer"><a href="ProductDetails/product-detail2.html">
-                        <img src="images/product-2.jpg" class="product-image"></a>
+                        <img src="images/product-2.jpg" class="product-image" alt="black-shoes"></a>
                     <button class="add-to-cart-button">add to cart</button>
                 </div>
                 <h4 class="product-name">Black Shoes</h4>
@@ -123,7 +127,7 @@
 
             <div class="col-4" data-category="pants" data-price="80">
                 <div class="imageContainer"><a href="ProductDetails/product-detail3.html">
-                        <img src="images/product-3.jpg" class="product-image"></a>
+                        <img src="images/product-3.jpg" class="product-image" alt="pants gray"></a>
                     <button class="add-to-cart-button">add to cart</button>
                 </div>
                 <h4 class="product-name">Gray pant</h4>
@@ -139,7 +143,7 @@
 
             <div class="col-4" data-category="T-shirt" data-price="20">
                 <div class="imageContainer"><a href="ProductDetails/product-detail4.html">
-                        <img src="images/product-4.jpg" class="product-image"></a>
+                        <img src="images/product-4.jpg" class="product-image" alt="blue-tshirt"></a>
                     <button class="add-to-cart-button">add to cart</button>
                 </div>
                 <h4 class="product-name">Blue Printed T-shirt</h4>
@@ -161,7 +165,7 @@
 
             <div class="col-4" data-category="shoes" data-price="50">
                 <div class="imageContainer"><a href="ProductDetails/product-detail5.html">
-                        <img src="images/product-5.jpg" class="product-image"></a>
+                        <img src="images/product-5.jpg" class="product-image" alt="gray shoes"></a>
                     <button class="add-to-cart-button">add to cart</button>
                 </div>
                 <h4 class="product-name">Gray shoes</h4>
@@ -177,7 +181,7 @@
 
             <div class="col-4" data-category="T-shirt" data-price="74">
                 <div class="imageContainer"><a href="ProductDetails/product-detail6.html">
-                        <img src="images/product-6.jpg" class="product-image"></a>
+                        <img src="images/product-6.jpg" class="product-image" alt="black t-shirt"></a>
                     <button class="add-to-cart-button">add to cart</button>
                 </div>
                 <h4 class="product-name">Black T-shirt</h4>
@@ -193,7 +197,7 @@
 
             <div class="col-4" data-category="socks" data-price="10">
                 <div class="imageContainer"><a href="ProductDetails/product-detail7.html">
-                        <img src="images/product-7.jpg" class="product-image"></a>
+                        <img src="images/product-7.jpg" class="product-image" alt="shoes"></a>
                     <button class="add-to-cart-button">add to cart</button>
                 </div>
                 <h4 class="product-name">HRX Socks</h4>
@@ -209,7 +213,7 @@
 
             <div class="col-4" data-category="watch" data-price="150">
                 <div class="imageContainer"><a href="ProductDetails/product-detail8.html">
-                        <img src="images/product-8.jpg" class="product-image"></a>
+                        <img src="images/product-8.jpg" class="product-image" alt="fossil watch"></a>
                     <button class="add-to-cart-button">add to cart</button>
                 </div>
                 <h4 class="product-name">Fossil Watch</h4>
@@ -226,7 +230,7 @@
 
             <div class="col-4" data-category="watch" data-price="120">
                 <div class="imageContainer"><a href="ProductDetails/product-detail9.html">
-                        <img src="images/product-9.jpg" class="product-image"></a>
+                        <img src="images/product-9.jpg" class="product-image" alt="Roadster watch"></a>
                     <button class="add-to-cart-button">add to cart</button>
                 </div>
                 <h4 class="product-name">Roadster Watch</h4>
@@ -242,7 +246,7 @@
 
             <div class="col-4" data-category="shoes" data-price="40">
                 <div class="imageContainer"><a href="ProductDetails/product-detail10.html">
-                        <img src="images/product-10.jpg" class="product-image"></a>
+                        <img src="images/product-10.jpg" class="product-image" alt="black and red shoes"></a>
                     <button class="add-to-cart-button">add to cart</button>
                 </div>
                 <h4 class="product-name">Black and Red Shoes</h4>
@@ -258,7 +262,7 @@
 
             <div class="col-4" data-category="shoes" data-price="35">
                 <div class="imageContainer"><a href="ProductDetails/product-detail11.html">
-                        <img src="images/product-11.jpg" class="product-image"></a>
+                        <img src="images/product-11.jpg" class="product-image" alt="gray shooes"></a>
                     <button class="add-to-cart-button">add to cart</button>
                 </div>
                 <h4 class="product-name">Gray Shoes</h4>
@@ -274,7 +278,7 @@
 
             <div class="col-4" data-category="pants" data-price="25">
                 <div class="imageContainer"><a href="ProductDetails/product-detail12.html">
-                        <img src="images/product-12.jpg" class="product-image"></a>
+                        <img src="images/product-12.jpg" class="product-image" alt="black pants"></a>
                     <button class="add-to-cart-button">add to cart</button>
                 </div>
                 <h4 class="product-name">Black Pants</h4>
@@ -289,8 +293,6 @@
                 <p class="product-price">$25.00</p>
             </div>
         </div>
-
-        `
         <div class="page-btn">
             <span>1</span>
             <span>2</span>
@@ -313,14 +315,14 @@
 
 
                     <div class="app-logo">
-                        <img src="images/play-store.png">
-                        <img src="images/app-store.png">
+                        <img src="images/play-store.png" alt="play-store">
+                        <img src="images/app-store.png" alt="app-store">
                     </div>
 
                 </div>
 
                 <div class="footer-col-2">
-                    <img src="images/logo-white.png">
+                    <img src="images/logo-white.png" alt="logo on the footer">
                     <p>Our purpose is To Sustainably Make the Pleasure and
                         Benefits of Sports
                         Accessible
@@ -388,6 +390,7 @@
         });
         updateHeaderTotalPrice();
     </script>
+    <script src="js/navbar.js"></script>
 </body>
 
 </html>

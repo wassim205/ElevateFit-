@@ -6,6 +6,7 @@
 }
 body {
   font-family: "Poppins", sans-serif;
+  z-index: -1;
 }
 
 .navbar {
@@ -25,6 +26,58 @@ nav ul li {
   display: inline-block;
   margin-right: 20px;
 }
+
+.menu-bar-side {
+  display: block;
+}
+
+/* Active state of mobile menu */
+.menu-bar-side.active {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 100%;
+  margin-left: -1em;
+  width: 100%;
+  background: rgba(7, 7, 7);
+  padding: 20px;
+}
+
+#burger-menu.fa.fa-bars.opacity {
+  opacity: 0.2;
+}
+
+.menu-bar-side.active li {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.menu-bar-side.active li a {
+  color: rgb(255, 0, 0);
+}
+
+/* Show burger menu icon only on mobile */
+#burger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  #burger-menu {
+    display: block;
+  }
+
+  .menu-bar-side {
+    display: none;
+  }
+  .menu-bar {
+    display: block;
+    position: absolute;
+    top: 100%;
+  }
+}
+
 /*for menu links*/
 a {
   text-decoration: none;
@@ -538,8 +591,7 @@ form a {
   justify-content: center;
   align-items: center;
   position: relative;
-  transition:  transform 0.2s;
-
+  transition: transform 0.2s;
 }
 
 .add-to-cart-button {
@@ -599,5 +651,33 @@ form a {
     font-size: 26px;
     line-height: 26px;
   }
-  /*for cart page*/
+  .col-2.sm {
+    display: flex;
+    margin-top: -5em;
+  }
+  .small-img-row {
+    display: flex;
+    flex-direction: column;
+    margin: 0.2em;
+  }
+
+  .TOTAL.active,
+  #cartLogo.fas.fa-shopping-cart.active {
+    position: relative;
+    top: -5.8em;
+  }
+  
+}
+
+@media screen and (max-width: 320px) {
+  .menu-bar-side.active {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 100%;
+    margin-left: -0.25em;
+    width: 100%;
+    background: rgba(7, 7, 7);
+    padding: 20px;
+  }
 }
